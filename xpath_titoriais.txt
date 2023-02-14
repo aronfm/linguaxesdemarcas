@@ -1,0 +1,28 @@
+1-	/tutoriales/tutorial
+
+	//tutorial
+
+2-	/tutoriales/tutorial/categoria
+
+	//categoria
+
+3-	count(//tutorial)
+
+4-	//tutorial/@anio
+	
+5-	//tutorial/autor/nombre[string-length()<'9']
+
+
+6-	//tutorial[@anio>'2012']
+
+7-	//tutorial[categoria='Spring']
+
+8-	//tutorial[@anio='2011'and categoria='XML']
+
+9-	//tutorial[position()=2]
+
+10-	//tutorial[last()-1]
+
+11-	//tutorial/titulo [contains(text(),'Spring')]/..
+
+12-	//tutorial[autor/nombre='Alejandro']
