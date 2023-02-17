@@ -1,0 +1,43 @@
+1-for $a in doc ("./titoriais.xml")//categoria
+return $a
+
+2-for $a in doc ("./titoriais.xml")//tutorial
+return <lostutoriales>{data($a/titulo)} ({data($a/visitas)})</lostutoriales>
+
+3-for $a in doc ("./titoriais.xml")//tutorial
+where  $a/visitas>2000
+return $a/titulo
+
+4-for $a in doc ("./titoriais.xml")//tutorial
+where $a/categoria='XML' and $a/visitas>30000
+return $a/titulo
+
+5-for $a in sum(doc ("./titoriais.xml")//visitas)
+return $a
+
+6- for $a in distinct-values(//categoria) 
+return <categoria>{data($a)}</categoria> 
+
+7-
+
+8- for $a in avg(doc ("./titoriais.xml")//visitas)
+where //categoria='XML'
+return <media>{data($a)}</media>
+
+9- for $a in count(doc ("./titoriais.xml")//tutorial)
+where //categoria='XML'
+return <totaltutoriales>{data($a)}</totaltutoriales>
+
+10- for $a in doc ("./titoriais.xml")//titulo
+for $b in //categoria
+order by $b
+return <titulos><categoria>{data($b)}</categoria> {data($a)}</titulos>
+
+(salen repetidos, no se como arreglarlo)
+
+11- for $a in doc ("./titoriais.xml")//tutorial
+return <tutorial>
+        {$a/titulo}
+        {$a/autor}
+        {$a/categoria}
+    </tutorial>
