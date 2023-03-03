@@ -1,1 +1,1 @@
-# repositorio para linguaxesdemarcas
+# repositorio para linguaxes de marcas
