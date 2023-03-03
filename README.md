@@ -1,4 +1,4 @@
-## titulo  
+# titulo  
 
 Esto es un parrafo  
 **negrita**  
